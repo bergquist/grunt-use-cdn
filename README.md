@@ -1,4 +1,4 @@
-grunt-contrib-msbuild
+grunt-msbuild
 =====================
 
 grunt wrapper for msbuild.
