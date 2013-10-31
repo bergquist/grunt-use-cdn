@@ -19,4 +19,4 @@ use-cdn: {
   }
 }
 ```
-This task will add a cdn url before each file that has been revisioned with grunt-filerev	
+This task will add a cdn url before each file that has been revisioned with grunt-filerev
