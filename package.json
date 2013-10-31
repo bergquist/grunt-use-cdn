@@ -1,13 +1,13 @@
 {
-  "name": "grunt-msbuild",
+  "name": "grunt-use-cdn",
   "version": "0.0.0",
-  "description": "grunt-msbuild",
+  "description": "grunt-use-cdn",
   "scripts": {
     "test": "grunt test"
   },
   "repository": {
     "type": "git",
-    "url": "git://github.com/bergquist/grunt-msbuild.git"
+    "url": "git://github.com/bergquist/grunt-use-cdn.git"
   },
   "author": "Carl Bergquist",
   "license": "MIT",

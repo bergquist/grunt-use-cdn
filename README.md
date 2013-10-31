@@ -1,16 +1,16 @@
-grunt-msbuild
+grunt-use-cdn
 =====================
 
 ```shell
-npm install grunt-msbuild --save-dev
+npm install grunt-use-cdn --save-dev
 ```
 
 ```js
-grunt.loadNpmTasks('grunt-msbuild');
+grunt.loadNpmTasks('grunt-use-cdn');
 ```
 
 ```js
-msbuild: {
+use-cdn: {
   options: {
     solution: '',
     mode: 'Release',
@@ -20,4 +20,4 @@ msbuild: {
 }
 ```
 
-grunt wrapper for msbuild.
+grunt wrapper for use-cdn.
