@@ -12,13 +12,17 @@ grunt.loadNpmTasks('grunt-use-cdn');
 ```js
 use-cdn: {
   options: {
-    solution: '',
-    mode: 'Release',
-    website: true,
-    destination: ''
+    url: 'http://some.static.url/content'
+  },
+  css: {
+    extension: 'css',
+    options: {
+      url: 'http://url.for.css'
+    }
+  }
+  images: {
+    extension: [ 'png', 'jpg', 'gif' ]
   }
 }
 ```
 This task will add a cdn url before each file that has been revisioned with grunt-filerev
-
-extends grunt.filerev.summary with cdn url
