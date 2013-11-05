@@ -1,11 +1,7 @@
 'use strict';
 
 module.exports = function(grunt) {
-  function msbuild() {
+  grunt.registerMultiTask('use-cdn', '', function() {
 
-  }
-
-  grunt.registerMultiTask('msbuild', '', function() {
-
-  })
+  });
 }
