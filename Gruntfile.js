@@ -4,14 +4,21 @@ module.exports = function(grunt) {
 
   grunt.initConfig({
     jshint: {
-      files: [ '*.js' ],
-      options: grunt.file.readJSON('.jshintrc')
+      options: {
+        jshintrc: '.jshintrc'
+      },
+      files: [
+        'Gruntfile.js',
+        'tasks/*.js',
+        'tests/**/*.js',
+        '!test/fixture/*.js'
+      ]
     },
     clean: {
       src: 'test/tmp'
     },
-    nodeunit: {
-      tests: 'test/*_test.js'
+    mochacli: {
+      all: 'test/*_test.js'
     }
   })
 
@@ -21,6 +28,6 @@ module.exports = function(grunt) {
 
   })
 
-  grunt.registerTask('default', ['jshint', 'test'])
+  grunt.registerTask('default', ['jshint'])
   grunt.registerTask('test', ['clean', 'copy', 'nodeunit', 'clean'])
 }
