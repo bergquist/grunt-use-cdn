@@ -1,4 +1,11 @@
 {
+  "globals": {
+    "before": false,
+    "beforeEach": false,
+    "describe": false,
+    "it": false
+  },
   "asi": true,
-  "node": true
+  "node": true,
+  "trailing" : true
 }

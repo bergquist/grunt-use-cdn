@@ -15,19 +15,15 @@ module.exports = function(grunt) {
       ]
     },
     clean: {
-      src: 'test/tmp'
+      src: 'tests/tmp'
     },
     mochacli: {
-      all: 'test/*_test.js'
+      all: ['tests/test-*.js']
     }
   })
 
   grunt.loadTasks('tasks')
 
-  grunt.registerTask('copy', function() {
-
-  })
-
-  grunt.registerTask('default', ['jshint'])
-  grunt.registerTask('test', ['clean', 'copy', 'nodeunit', 'clean'])
+  grunt.registerTask('default', ['jshint', 'test'])
+  grunt.registerTask('test', [ 'clean', 'mochacli', 'clean'])
 }
