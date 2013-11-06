@@ -7,7 +7,9 @@ describe('use cdn grunt task', function() {
     grunt = require('grunt');
     grunt.task.init([])
     grunt.config.init({})
-    grunt.task.loadTasks('tasks')
+    grunt.log.muted = true
+    grunt.fail.errorcount = 0
+    require('../tasks/usecdn')(grunt)
   })
 
   describe('without grunt.filerev.summary', function() {
@@ -19,6 +21,7 @@ describe('use cdn grunt task', function() {
 
     it('should fail', function() {
       grunt.task.run('use-cdn')
+      grunt.task.start()
       assert.equal(grunt.fail.errorcount, 1)
     })
   })
@@ -35,6 +38,7 @@ describe('use cdn grunt task', function() {
 
     it('should work just fine', function() {
       grunt.task.run('use-cdn')
+      grunt.task.start()
       assert.equal(grunt.fail.errorcount, 0)
     })
   })
