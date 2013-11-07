@@ -6,7 +6,7 @@ describe('replacer', function() {
   before(function() {
     this.summary = {
       '/static/image.png': '/static/image.2awfa3.png',
-      'script.js': 'script.fqwert.js'
+      'static/script.js': 'script.fqwert.js'
     }
     this.result = replacer.prefix(this.summary)
   })
@@ -16,6 +16,6 @@ describe('replacer', function() {
   })
 
   it('script.js should have cdn', function() {
-    assert.equal(this.result['/static/image.png'], '//static.com/static/image.2awfa3.png')
+    assert.equal(this.result['static/script.js'], '//static.com/static/script.fqwert.js')
   })
 })

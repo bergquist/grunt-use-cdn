@@ -26,5 +26,8 @@
   },
   "peerDependencies": {
     "grunt": "~0.4.0"
+  },
+  "dependencies": {
+    "underscore": "~1.5.2"
   }
 }
