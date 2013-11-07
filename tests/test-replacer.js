@@ -6,7 +6,7 @@ describe('replacer', function() {
   before(function() {
     this.summary = {
       '/static/image.png': '/static/image.2awfa3.png',
-      'static/script.js': 'script.fqwert.js'
+      'static/script.js': 'static/script.fqwert.js'
     }
     this.result = replacer.prefix(this.summary)
   })
