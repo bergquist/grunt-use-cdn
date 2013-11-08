@@ -1,23 +1,27 @@
 var _ = require('underscore')
 
-function Replacer(baseUrl) {
-  this.baseUrl = baseUrl
+function Replacer(options) {
+  this.options = options
 }
 
-Replacer.prototype.prefix = function(arg) {
+Replacer.prototype.prefix = function(options, arg) {
   _.forEach(arg, function(file, index) {
-    if (file.indexOf('/') !== 0) {
-      arg[index] = this.baseUrl + '/' + file
-    } else {
-      arg[index] = this.baseUrl + file
-    }
+    _.forEach(options, function(opt) {
+      if (file.match(opt.pattern)) {
+        if (file.indexOf('/') !== 0) {
+          arg[index] = opt.url + '/' + file
+        } else {
+          arg[index] = opt.url + file
+        }
+      }
+    })
   }, this)
 
   return arg
 }
 
 module.exports = {
-  create: function(baseUrl) {
-    return new Replacer(baseUrl)
+  create: function() {
+    return new Replacer()
   }
 }

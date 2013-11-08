@@ -15,13 +15,15 @@ use-cdn: {
     url: 'http://some.static.url/content'
   },
   css: {
-    extension: 'css',
     options: {
+      pattern: /\.css/gi,
       url: 'http://url.for.css'
     }
   }
   images: {
-    extension: [ 'png', 'jpg', 'gif' ]
+    options: {
+      pattern: [ /\.jpg/gi, /\.png/gi, /\.gif/gi ]
+    }
   }
 }
 ```
