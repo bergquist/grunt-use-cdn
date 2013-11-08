@@ -1,6 +1,6 @@
 'use strict';
 var assert = require('assert')
-var replacer = require('../libs/replacer').create()
+var replacer = require('../libs/replacer')
 
 describe('replacer', function() {
   var summary = null,
