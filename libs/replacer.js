@@ -23,5 +23,16 @@ function addCdn(file, opt, arg, index) {
 }
 
 function isValidFile(file, options) {
-  return file.match(options.pattern)
+  if (_.isArray(options.pattern)) {
+    result = false
+    options.pattern.forEach(function(p) {
+      if (!result && file.match(p)) {
+        result = true;
+      }
+    })
+
+    return result;
+  } else {
+    return file.match(options.pattern)
+  }
 }

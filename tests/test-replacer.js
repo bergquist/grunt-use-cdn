@@ -44,12 +44,32 @@ describe('replacer', function() {
       result = replacer.prefix(options, summary)
     })
 
-    it('', function() {
+    it('images should have image cdn', function() {
       assert.equal(result['/static/image.png'], '//image.cdn.com/static/image.2awfa3.png')
     })
 
-    it('', function() {
+    it('script should have script cdn', function() {
       assert.equal(result['static/script.js'], '//script.cdn.com/static/script.fqwert.js')
+    })
+  })
+
+  describe('with two patterns', function() {
+    beforeEach(function() {
+      options = [
+        {
+          pattern: [ /\.png/gi, /\.js/ ],
+          url: '//image.cdn.com'
+        }
+      ]
+      result = replacer.prefix(options, summary)
+    })
+
+    it('images should have image cdn', function() {
+      assert.equal(result['/static/image.png'], '//image.cdn.com/static/image.2awfa3.png')
+    })
+
+    it('script should have script cdn', function() {
+      assert.equal(result['static/script.js'], '//image.cdn.com/static/script.fqwert.js')
     })
   })
 })
